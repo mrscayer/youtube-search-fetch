@@ -9,6 +9,7 @@ import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
+com.facebook.react.bridge.ReadableMap
 
 class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
@@ -16,8 +17,7 @@ class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) : ReactCon
         return "YoutubeSearchFetch"
     }
     
-    @ReactMethod
-    fun fetchData(url: String, headers: Map<String, String>, body: String, promise: Promise) {
+    fun fetchData(url: String, headers: ReadableMap, body: String, promise: Promise) {
         Thread {
             try {
                 val urlObj = URL(url)
@@ -25,8 +25,10 @@ class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) : ReactCon
                 conn.requestMethod = "POST"
 
                 // Set headers
-                headers.forEach { (key, value) ->
-                    conn.setRequestProperty(key, value)
+                // headers parametresi artık ReadableMap türünde.
+                // ReadableMap kullanılarak JavaScript'ten gelen verileri işliyoruz.
+                headers.keySetIterator().forEachRemaining { key ->
+                    conn.setRequestProperty(key, headers.getString(key))
                 }
 
                 // Set body
