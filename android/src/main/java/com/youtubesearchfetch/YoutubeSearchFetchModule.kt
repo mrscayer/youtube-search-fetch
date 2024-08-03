@@ -13,9 +13,9 @@ import java.net.URL
 class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
     override fun getName(): String {
-        return NAME
+        return "YoutubeSearchFetch"
     }
-
+    
     @ReactMethod
     fun fetchData(url: String, headers: Map<String, String>, body: String, promise: Promise) {
         Thread {
