@@ -9,7 +9,7 @@ import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
-com.facebook.react.bridge.ReadableMap
+import com.facebook.react.bridge.ReadableMap
 
 class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
