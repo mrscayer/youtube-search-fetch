@@ -11,12 +11,13 @@ import java.net.HttpURLConnection
 import java.net.URL
 import com.facebook.react.bridge.ReadableMap
 
-class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
-
+class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) :
+  ReactContextBaseJavaModule(reactContext) {
+    
     override fun getName(): String {
         return "YoutubeSearchFetch"
     }
-    
+    @ReactMethod
     fun fetchData(url: String, headers: ReadableMap, body: String, promise: Promise) {
         Thread {
             try {
