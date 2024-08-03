@@ -4,7 +4,9 @@ import { StyleSheet, View, Text } from 'react-native';
 export default function App() {
   const [result, setResult] = useState<number | undefined>();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setResult(0);
+  }, []);
 
   return (
     <View style={styles.container}>
