@@ -27,7 +27,7 @@ class YoutubeSearchFetchModule(reactContext: ReactApplicationContext) : ReactCon
                 // Set headers
                 // headers parametresi artık ReadableMap türünde.
                 // ReadableMap kullanılarak JavaScript'ten gelen verileri işliyoruz.
-                headers.keySetIterator().forEachRemaining { key ->
+               headers.keySetIterator().forEach { key ->
                     conn.setRequestProperty(key, headers.getString(key))
                 }
 
