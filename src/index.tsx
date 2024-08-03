@@ -17,6 +17,6 @@ const YoutubeSearchFetch = NativeModules.YoutubeSearchFetch
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return YoutubeSearchFetch.multiply(a, b);
+export function fetchData(url: string, headers: any, body: any): Promise<any> {
+  return YoutubeSearchFetch.fetchData(url, headers, body);
 }
