@@ -1,5 +1,5 @@
 {
-  "name": "youtube-search-fetch",
+  "name": "@mrscayer/youtube-search-fetch",
   "version": "0.1.0",
   "description": "youtube search",
   "source": "./src/index.tsx",
